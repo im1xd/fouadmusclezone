@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   verification: {
-    google: 'uh4RwKQaTIKu5OFjZBJJ9rRRbfcFaYFuyGkVqOD-ciw',
-  },
+  google: '_e5KojoNWDHjqna7mnfJXtbh-WilimBoQVOYM-NnCCs',
+   },
 }
 
 const jsonLd = {
