@@ -23,7 +23,7 @@ export async function fetchProducts(opts?: {
       AND (${opts?.search ?? null} IS NULL OR p.name ILIKE '%' || ${opts?.search ?? null} || '%' OR p.name_fr ILIKE '%' || ${opts?.search ?? null} || '%')
       AND (${opts?.featured ?? false} = false OR p.is_featured = true)
       AND (${opts?.bestSeller ?? false} = false OR p.is_best_seller = true)
-    GROUP BY p.id
+GROUP BY p.id, c.id, c.name, c.name_fr, c.slug
     ORDER BY p.created_at DESC
   `
   return rows as unknown as Product[]
