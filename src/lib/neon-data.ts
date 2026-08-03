@@ -19,10 +19,10 @@ export async function fetchProducts(opts?: {
     LEFT JOIN product_images pi ON pi.product_id = p.id
     LEFT JOIN categories c ON c.id = p.category_id
     WHERE p.is_hidden = false
-      AND (${opts?.categoryId ?? null} IS NULL OR ${opts?.categoryId ?? null} = 'all' OR p.category_id = ${opts?.categoryId ?? null})
-      AND (${opts?.search ?? null} IS NULL OR p.name ILIKE '%' || ${opts?.search ?? null} || '%' OR p.name_fr ILIKE '%' || ${opts?.search ?? null} || '%')
-      AND (${opts?.featured ?? false} = false OR p.is_featured = true)
-      AND (${opts?.bestSeller ?? false} = false OR p.is_best_seller = true)
+  AND (${opts?.categoryId ?? null}::text IS NULL OR ${opts?.categoryId ?? null}::text = 'all' OR p.category_id = ${opts?.categoryId ?? null}::uuid)
+  AND (${opts?.search ?? null}::text IS NULL OR p.name ILIKE '%' || ${opts?.search ?? null}::text || '%' OR p.name_fr ILIKE '%' || ${opts?.search ?? null}::text || '%')
+  AND (${opts?.featured ?? false}::boolean = false OR p.is_featured = true)
+  AND (${opts?.bestSeller ?? false}::boolean = false OR p.is_best_seller = true)
 GROUP BY p.id, c.id, c.name, c.name_fr, c.slug
     ORDER BY p.created_at DESC
   `
