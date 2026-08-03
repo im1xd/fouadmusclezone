@@ -206,7 +206,7 @@ export async function fetchAllProducts(): Promise<Product[]> {
       FROM products p
       LEFT JOIN product_images pi ON pi.product_id = p.id
       LEFT JOIN categories c ON c.id = p.category_id
-      GROUP BY p.id
+      GROUP BY p.id, c.id, c.name, c.name_fr
       ORDER BY p.created_at DESC
     `
     return rows as unknown as Product[]
