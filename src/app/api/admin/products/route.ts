@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { fetchAllProducts, createProduct, saveProductImages } from '@/lib/neon-data'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export async function GET() {
   const products = await fetchAllProducts()
   return NextResponse.json({ products })
 }
 
 export async function POST(req: NextRequest) {
+  // ... باقي الكود بدون تغيير
   try {
     const body = await req.json()
     const { images, ...data } = body
