@@ -20,10 +20,10 @@ export async function fetchProducts(opts?: {
       LEFT JOIN product_images pi ON pi.product_id = p.id
       LEFT JOIN categories c ON c.id = p.category_id
       WHERE p.is_hidden = false
-        ${opts?.categoryId && opts.categoryId !== 'all' ? sql`AND p.category_id = ${opts.categoryId}` : sql``}
-        ${opts?.search ? sql`AND (p.name ILIKE ${'%' + opts.search + '%'} OR p.name_fr ILIKE ${'%' + opts.search + '%'})` : sql``}
-        ${opts?.featured ? sql`AND p.is_featured = true` : sql``}
-        ${opts?.bestSeller ? sql`AND p.is_best_seller = true` : sql``}
+        AND (${opts?.categoryId ?? null} IS NULL OR ${opts?.categoryId ?? null} = 'all' OR p.category_id = ${opts?.categoryId ?? null})
+        AND (${opts?.search ?? null} IS NULL OR p.name ILIKE '%' || ${opts?.search ?? null} || '%' OR p.name_fr ILIKE '%' || ${opts?.search ?? null} || '%')
+        AND (${opts?.featured ?? false} = false OR p.is_featured = true)
+        AND (${opts?.bestSeller ?? false} = false OR p.is_best_seller = true)
       GROUP BY p.id
       ORDER BY p.created_at DESC
     `
