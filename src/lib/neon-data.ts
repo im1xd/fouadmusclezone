@@ -41,7 +41,7 @@ export async function fetchProductBySlug(slug: string): Promise<Product | null> 
       LEFT JOIN product_images pi ON pi.product_id = p.id
       LEFT JOIN categories c ON c.id = p.category_id
       WHERE p.slug = ${slug} AND p.is_hidden = false
-      GROUP BY p.id
+      GROUP BY p.id, c.id, c.name, c.name_fr, c.slug
       LIMIT 1
     `
     return (rows[0] as unknown as Product) || null
