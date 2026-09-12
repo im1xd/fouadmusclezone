@@ -171,11 +171,22 @@ export default function HomePage() {
   )
 }
 
+
+function cldOptimize(url?: string, width = 400): string | undefined {
+  if (!url || !url.includes('res.cloudinary.com')) return url
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`)
+}
+
+
 function ProductCard({ product: p, lang }: { product: any; lang: 'ar' | 'fr' }) {
   const img = p.product_images?.find((i: any) => i?.is_primary)?.url ?? p.product_images?.[0]?.url
   const inStock = p.is_available && p.quantity > 0
   const disc = p.compare_price && p.compare_price > p.price ? Math.round((1 - p.price / p.compare_price) * 100) : 0
   const name = lang === 'fr' && p.name_fr ? p.name_fr : p.name
+
+
+
+
 
   return (
     <div className="product-card" style={{ background: 'var(--dark2)', border: '1px solid var(--gray1)', borderRadius: '12px', overflow: 'hidden', position: 'relative', display: 'flex', flexDirection: 'column' }}>
@@ -187,7 +198,9 @@ function ProductCard({ product: p, lang }: { product: any; lang: 'ar' | 'fr' }) 
 
       <Link href={`/products/${p.slug}`} style={{ textDecoration: 'none', display: 'block', flex: 1 }}>
         <div style={{ aspectRatio: '1', background: 'var(--dark3)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {img ? <img src={img} alt={name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: '48px' }}>💪</span>}
+         
+ {img ? <img src={cldOptimize(img, 400)} alt={name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: '48px' }}>💪</span>}
+
         </div>
         <div style={{ padding: '10px 10px 6px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--white)', marginBottom: '5px', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
