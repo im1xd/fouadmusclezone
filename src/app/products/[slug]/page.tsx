@@ -17,6 +17,11 @@ async function fetchProductBySlug(slug: string) {
   return data.product
 }
 
+
+function cldOptimize(url?: string, width = 400): string | undefined {
+  if (!url || !url.includes('res.cloudinary.com')) return url
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`)
+}
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const { lang } = useCartStore()
   const router = useRouter()
@@ -144,13 +149,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <div style={{ background: 'var(--dark2)', borderRadius: '14px', border: '1px solid var(--gray1)', overflow: 'hidden', aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
-              {mainImg ? <img src={mainImg} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : <span style={{ fontSize: '80px' }}>💪</span>}
+              {{mainImg ? <img src={cldOptimize(mainImg, 800)} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : <span style={{ fontSize: '80px' }}>💪</span}>}
             </div>
             {images.length > 1 && (
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {images.map((img: any, i: number) => (
                   <button key={i} onClick={() => setActiveImg(i)} style={{ width: 60, height: 60, borderRadius: '8px', overflow: 'hidden', border: `2px solid ${i === activeImg ? 'var(--orange)' : 'var(--gray1)'}`, background: 'var(--dark3)', padding: 0, cursor: 'pointer' }}>
-                    <img src={img.url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={cldOptimize(img.url, 120)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </button>
                 ))}
               </div>
