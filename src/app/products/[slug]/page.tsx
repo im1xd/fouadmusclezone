@@ -149,7 +149,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <div style={{ background: 'var(--dark2)', borderRadius: '14px', border: '1px solid var(--gray1)', overflow: 'hidden', aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
-              {{mainImg ? <img src={cldOptimize(mainImg, 800)} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : <span style={{ fontSize: '80px' }}>💪</span}>}
+              {mainImg ? <img src={cldOptimize(mainImg, 800)} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : <span style={{ fontSize: '80px' }}>💪</span>}
             </div>
             {images.length > 1 && (
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
