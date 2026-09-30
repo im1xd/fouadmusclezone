@@ -37,7 +37,7 @@ export default function Navbar() {
           </div>
           <div>
             <div style={{ fontWeight: 900, fontSize: '14px', color: 'var(--white)', lineHeight: 1.1, fontFamily: 'Barlow Condensed, Cairo, sans-serif', letterSpacing: '0.5px' }}>
-              FOUAD MUSCLE ZONE
+             MUSCLE ZONE Fouad
             </div>
             <div style={{ fontSize: '10px', color: 'var(--orange)', fontWeight: 600 }}>
               {lang === 'ar' ? 'مكملات غذائية أصلية' : 'Compléments authentiques'}
