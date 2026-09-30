@@ -43,7 +43,7 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 800, marginBottom: '14px', color: '#fff' }}>{lang === 'ar' ? 'اتصل بنا' : 'Contact'}</div>
             <div style={{ fontSize: '13px', color: 'var(--gray4)', marginBottom: '8px' }}>📞 0660 44 55 32</div>
-            <div style={{ fontSize: '13px', color: 'var(--gray4)', marginBottom: '8px' }}>📍 سطيف، الجزائر</div>
+            <div style={{ fontSize: '13px', color: 'var(--gray4)', marginBottom: '8px' }}>📍 الوادي، الجزائر</div>
             <a href="https://maps.app.goo.gl/6gBja8UDLokDdBDv5" target="_blank" rel="noopener noreferrer"
               style={{ fontSize: '12px', color: 'var(--orange)', textDecoration: 'none' }}>
               🗺 {lang === 'ar' ? 'الموقع على الخريطة' : 'Voir sur la carte'}
