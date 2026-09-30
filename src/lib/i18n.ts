@@ -1,6 +1,6 @@
 export const t = {
   ar: {
-    storeName: 'Fouad Muscle Zone',
+    storeName: 'Muscle Zone Fouad',
     tagline: 'مكملات غذائية أصلية',
     allProducts: 'جميع المنتجات',
     featured: 'منتجات مميزة',
@@ -54,7 +54,7 @@ export const t = {
     ],
   },
   fr: {
-    storeName: 'Fouad Muscle Zone',
+    storeName: 'Muscle Zone Fouad',
     tagline: 'Compléments alimentaires authentiques',
     allProducts: 'Tous les produits',
     featured: 'Produits vedettes',
