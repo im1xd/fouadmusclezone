@@ -7,8 +7,8 @@ const BASE = 'https://fouadmz.netlify.app'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: 'Fouad Muscle Zone | مكملات غذائية أصلية في الجزائر',
-    template: '%s | Fouad Muscle Zone',
+    default: 'Muscle Zone Fouad| مكملات غذائية أصلية في الجزائر',
+    template: '%s | Muscle Zone Fouad',
   },
   description: 'أفضل متجر مكملات غذائية أصلية في الجزائر — بروتين، كرياتين، ماس جينر، فيتامينات. توصيل لجميع الولايات. دفع عند الاستلام.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Store',
-  name: 'Fouad Muscle Zone',
+  name: 'Muscle Zone Fouad',
   description: 'متجر مكملات غذائية أصلية في الجزائر',
   url: BASE,
   telephone: '+213660445532',
