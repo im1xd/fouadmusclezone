@@ -32,7 +32,7 @@ export default function Footer() {
             {[
               { href: '/#products', label: { ar: 'جميع المنتجات', fr: 'Tous les produits' } },
               { href: '/track', label: { ar: 'تتبع الطلب', fr: 'Suivre commande' } },
-              { href: 'https://wa.me/213660445532', label: { ar: 'مطور الموقع Imad Abid', fr: 'Contact the developer Imad Abid' } },
+              { href: 'https://wa.me/213542082887', label: { ar: 'مطور الموقع ', fr: 'Contact the developer ' } },
             ].map(l => (
               <Link key={l.href} href={l.href}
                 style={{ display: 'block', color: 'var(--gray4)', fontSize: '13px', textDecoration: 'none', marginBottom: '8px' }}>
