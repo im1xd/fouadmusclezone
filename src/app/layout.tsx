@@ -30,7 +30,7 @@ const jsonLd = {
   url: BASE,
   telephone: '+213660445532',
   priceRange: '$$',
-  address: { '@type': 'PostalAddress', addressLocality: 'سطيف', addressCountry: 'DZ' },
+  address: { '@type': 'PostalAddress', addressLocality: 'الوادي', addressCountry: 'DZ' },
   sameAs: [
     'https://www.instagram.com/fouad_fitness39',
     'https://www.facebook.com/share/1CLyvfRZRo/',
