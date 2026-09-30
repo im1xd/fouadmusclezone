@@ -32,7 +32,7 @@ export default function Navbar() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '58px', padding: '0 16px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
           <div style={{ width: 42, height: 42, borderRadius: '50%', border: '2px solid var(--orange)', overflow: 'hidden', flexShrink: 0, background: 'var(--dark2)' }}>
-            <img src="/logo.jpg" alt="Fouad Muscle Zone" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            <img src="/logo.jpg" alt="Muscle Zone Fouad" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e: any) => { e.target.parentElement.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:var(--orange)">FMZ</div>' }} />
           </div>
           <div>
