@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
         <div style={{ borderTop: '1px solid var(--gray1)', paddingTop: '16px', textAlign: 'center', fontSize: '12px', color: 'var(--gray4)' }}>
-          © 2024 Fouad Muscle Zone — {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}
+          © 2026 Fouad Muscle Zone — {lang === 'ar' ? ' للتواصل مع المطور +213542082887' : 'Tous droits réservés'}
         </div>
       </div>
     </footer>
